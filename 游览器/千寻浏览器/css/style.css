@@ -1,0 +1,511 @@
+/*
+* @Author: Administrator
+* @Date:   2018-10-13 10:47:08
+* @Last Modified by:   lenovo
+* @Last Modified time: 2018-10-23 18:59:56
+*/
+/* 
+	*选择所有标签  清除默认样式
+
+ */
+*{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+/* 
+	 选择标签{
+		标签的样式
+	 }
+ */
+ /* 同时选择三个标签 */
+ html,body,section{
+ 	height: 100%
+ }
+/* 选择section的子级标签为div */
+
+section>div{
+	width: 100%;
+	/* width: 14.28%; */
+	height: 100%;
+	/* float: left; */
+	/* 宽高设置百分比参照物是父级 */
+
+	 overflow: hidden; /*第6个屏幕的气球 放大可隐藏它超出的屏幕范围部分，所有动画都可以*/
+	position: relative;
+}
+
+/* 通过类名选择标签 */
+.screen1{
+	/* 路径：相对路径，相对当前文件寻找 */
+	background: url('../images/b01.jpg');
+	/* 设置背景图片尺寸。
+	第一个：图片宽度，第二个值：高度。
+	设置百分比，参照物当前的容器 */
+	background-size: 100% 100%;
+}
+.wrap{
+	width: 350px;
+	height: 431px;
+/* 	background: lime; */
+	/* margin-left: auto;
+	margin-right: auto; */
+	/* margin-top: 60px; */
+	/* 外边距塌陷，父级跟着下来 
+	父级设置overflow：hidden*/
+
+	position: absolute;
+	/* 子级绝对定位，父级相对定位，
+	可以让自己固定在父级的某个位置 */
+	top: 50%;
+	margin-top: -215px;
+	left: 50%;
+	margin-left: -175px;
+
+	text-align: center;
+	/* 文本类的标签水平居中：图片、文字 */
+	font-size: 12px;
+	/* 文字大小 */
+	color: white;
+}
+.ball{
+	width: 116px;
+	position: relative;
+	/* 相对自身位移 */
+	animation: move 2s infinite linear;
+}
+@keyframes move{
+	0%{
+		top: 0px;
+	}
+	50%{
+		top: -15px;
+	}
+	100%{
+		top: 0px;
+	}
+}
+
+.icon{
+	margin-top: 40px;
+}
+/* 空格代表选择后代 */
+.icon img{
+	height: 50px;
+}
+.icon span{
+	background: url('../images/logo-text.png') no-repeat right;
+	display: inline-block;
+	/* 转化标签为行内块 */
+	padding-right: 14px;
+	/* 右边边框和内容的留白 */
+}
+.des{
+	margin-top: 14px;
+	margin-bottom: 56px;
+	transition: all 2s;
+}
+.copy{
+	margin-top: 12px;
+}
+ .icon span{
+	position: relative;
+	transition: all 2s;
+	/* 中间变化过程可见 */
+	left: 0px;
+}
+.icon>img{
+	position: relative;
+	transition: all 2s;
+	right: 0px;
+}
+.ani span{
+	transform: rotate(180deg);
+	left: 600px;
+}
+.ani .icon>img{
+	transform: rotate(180deg);
+	right: 600px;
+}
+.ani .des{
+	transform: rotate(360deg) scale(0);
+}
+.big{
+	position: absolute;
+	/* 子级绝对定位，父级相对定位，自己固定在父级的某个位置。定位的标签有图层顺序，
+		后写的在上面
+	 */
+	animation: cloud 60s infinite linear;
+	top: 100px;
+}
+.small{
+	position: absolute;
+	animation: cloud 40s infinite linear;
+	top: 200px;
+}
+@keyframes cloud{
+	0%{
+		left: -300px
+	}
+	50%{
+		left: 2000px
+	}
+	100%{
+		left: -300px
+	}
+}
+.screen2{
+
+	background: url('../images/b02.jpg');
+	background-size: 100% 100%;
+}
+.pointer{
+	position: absolute;
+	left: 50%;
+	width: 100px;
+	margin-left: -50px;
+	animation: rotate 2s infinite linear;
+	    top: 9px;
+}
+.screen3{
+	background: url('../images/b03.jpg');
+	background-size: 100% 100%;
+}
+.screen3 h6{
+	position: absolute;
+	left: 0px;
+	width: 100%;
+	height: 140px;
+	text-align: center;
+	z-index: 1;
+}
+.co{
+	position: relative;/*相对自身做位移*/
+	animation: move 4s infinite linear;
+}
+.screen3 h6 img:nth-of-type(1){width: 10px;animation: movepao 6s linear  infinite ;}
+.screen3 h6 img:nth-of-type(2){width: 12px;animation: movepao 10s linear  infinite ;}
+.screen3 h6 img:nth-of-type(3){animation: movepao 8s linear  infinite ;}
+.screen3 h6 img:nth-of-type(4){width: 14px;animation: movepao 12s linear  infinite ;}
+.screen3 h6 img:nth-of-type(5){width: 8px;animation: movepao 14s linear  infinite ;}
+.screen3 h6 img:nth-of-type(6){width: 8px;animation: movepao 14s linear  infinite ;}
+.screen3 h6 img:nth-of-type(7){animation: movepao 12s linear  infinite ;}
+.screen3 h6 img:nth-of-type(8){animation: movepao 10s linear  infinite ;}
+.screen3 h6 img:nth-of-type(9){animation: movepao 8s linear  infinite ;}
+@keyframes movepao{
+	0%{
+		transform: translate(0px, 0px);
+	}
+	100%{transform: translate(2px, -200px)}
+}
+.screen4{
+
+	background: url('../images/b04.jpg');
+	background-size: 100% 100%;
+}
+.screen4 h4{
+	transition: all 8s;/*一般有鼠标的hover时要加个transition: all 时间，可以让hover的效果变得慢，用户会有好的体验感*/
+}
+.ball1{
+	animation: rota 10s infinite linear;transform-origin: center bottom: 
+}
+@keyframes rota{
+	0%{
+		transform: rotate(0deg);
+	}
+	25%{
+		transform: rotate(10deg);/*旋转10度*/
+	}
+	50%{
+		transform: rotate(0deg);
+	}
+	75%{
+		transform: rotate(-10deg);
+	}
+	100%{
+		transform: rotate(0deg);
+	}
+}
+h4:hover{
+	transform: translate(-400px, -400px); /*: hover 前面要跟样式组合，例如a:hover h4:hover;*/
+
+}
+.screen5{
+
+	background: url('../images/b05.jpg');
+	background-size: 100% 100%;
+}
+.blah{
+	position: absolute;
+	left: 50%;
+	width: 150px;
+	margin-left: -70px;
+	animation: rotate 10s infinite linear;
+	 
+	
+}
+.bla{
+	animation: rotate 10s infinite linear;
+}
+
+.fly{
+	position: absolute;
+	animation: movefly 1s infinite linear;
+}
+.fly01{
+	position: absolute;
+	animation: movefly01 2s infinite linear ;right: 0px;top:0px;}
+.fly02{
+	position: absolute;
+	animation: movefly02 3s infinite linear; left: 0px;bottom: 0px;
+}
+.fly03{
+	position: absolute;
+	animation: movefly03 4s infinite linear;right: 0px;bottom: 0px;
+}
+
+@keyframes movefly{
+	0%{
+		transform: translate(0px, 0px);
+		
+	}
+	100%{
+		transform: translate(600px, 170px);
+	}
+}
+@keyframes movefly01{
+	0%{
+		transform: translate(0px, 0px);
+		
+	}
+	100%{
+		transform: translate(-600px, 170px);
+	}
+}
+@keyframes movefly02{
+	0%{
+		transform: translate(0px, 0px);
+		
+	}
+	100%{
+		transform: translate(600px, -400px);
+	}
+}
+@keyframes movefly03{
+	0%{
+		transform: translate(0px, 0px);
+		
+	}
+	100%{
+		transform: translate(-600px, -400px);
+	}
+}
+
+.screen6{
+
+	background: url('../images/b06.jpg');
+	background-size: 100% 100%;
+}
+.pic{
+   
+	width: 120px;
+
+	} 
+.screen6 h4{
+	animation:big 2s infinite linear;
+	/*position: absolute;*/
+	left:0px;
+	bottom:200px;
+	width:100%;
+	height: 100px;
+	text-align: center;
+	z-index:-1;
+
+}
+
+@keyframes big{
+		0%{transform: scale(0);}
+		100%{
+			transform: scale(6);
+		}
+
+	}
+
+	
+.screen6 h3{
+	position: absolute;
+	bottom: 75%;
+    right: 100px;
+   animation: movel 6s infinite linear;
+}
+.screen6 h6{
+	position: absolute;
+	bottom: 55%;
+	right: 220px;
+	animation: movel 10s infinite linear;
+
+}
+@keyframes movel{
+ 	0%{
+		transform: translate(0px, 0px);
+	}
+	50%{
+		transform: translate(0px, 30px);
+	}
+	100%{
+		transform: translate(0px, 0px);
+	}
+}
+
+.screen7{
+
+	background: url('../images/bg07.jpg');
+	background-size: 100% 100%;
+}
+.screen7 h6{
+	position: absolute;
+	animation: movesky 10s infinite linear;
+	height: 100%;
+	/*把图片放在screen5里，占满整个屏幕 ，
+	height: 100%,在设置动画效果，位移设置成绝对位移。;*/
+
+}
+@keyframes movesky{
+	0%{
+		transform: translate(0px, 0px);
+	}
+	100%{
+		transform: translate(0px, 300px);
+	}
+}
+.screen7 h4{
+	position: absolute;
+	width: 100%;
+	height: 300px;
+	bottom: 410px;
+	text-align: center;
+	animation: move 5s infinite linear;
+	
+}
+
+.logo{
+	position: fixed;
+	/* 固定定位：不会随着窗口滚动而滚动 */
+	/* 参照物：当前的窗口 */
+	left: 40px;
+	top: 20px;
+}
+.music{
+	position: fixed;
+	right: 4px;
+	top: 20px;
+	width: 40px;
+	/* 图片只设置一个值。另外一个值计算机自动计算 */
+	
+	
+}
+
+.play{
+	animation: rotate 2s  infinite linear;
+	/* 使用动画：动画名字 动画持续时间  次数  平缓过渡 */
+}
+
+/* 定义动画
+	@keyframes  动画名字{
+	
+	}
+ */
+@keyframes rotate{
+	/* 各个状态的样式条 */
+	  /* 0%{
+		right: 4px;
+	  } 
+	  50%{
+		right: 400px;
+	  }
+	  100%{
+		right: 4px;
+	  }   */  
+
+	  0%{
+	  	/* 标签旋转 */
+		transform: rotate(0deg)
+	  } 
+	  100%{
+		transform: rotate(360deg)
+	  }             
+}
+
+.grp{
+	position: fixed;
+	right: 10px;
+	top: 50%;
+	margin-top: -107px;
+}
+.grp li{
+	width: 20px;
+	height: 20px;
+	/* 边框：线的粗细  线的类型  线的颜色 */
+	border: 1px solid #d86536;
+	/* 外边距 */
+	margin-bottom: 10px;
+	/* 圆角效果  值50%圆形 */
+	border-radius: 50%;
+
+	/* 标签在父级中居中 */
+	margin-left: auto;
+	margin-right: auto;
+	cursor: pointer;
+	/* 鼠标移入增加小手效果 */
+}
+body{
+	overflow: hidden;
+	/* 超出部分隐藏 */
+}
+.grp .current{
+	/* 平铺方式(默认平铺)  水平坐标  垂直坐标 */
+	background: url('../images/side_bg.png') no-repeat 0px 0px;
+	background-size: 94%;
+	width: 34px;
+	height: 34px;
+	border: none;
+	animation: rotate 2s  infinite linear;
+}
+section{
+	/* 相对定位：参照物自身，相对自身位移 */
+	position: relative;
+}
+nav {
+	position: fixed;
+	width: 100%;
+	height: 60px;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	background: rgba(0, 0, 0, 0.6)
+
+}
+nav ul {
+	width: 1000px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+nav ul li {
+	float: left;
+	width: 200px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+}
+nav a{display: block;width: 200px;height: 60px;transition: background 0.8s;font-size: 14px;}
+nav a.one:hover{background: #228bd6;}
+nav a.two:hover{background: #c33;}
+nav a.three:hover{background: #3aa624;}
+nav a.four:hover{background: #c145cc;}
+nav a.five:hover{background: #f2ca00;}
+a {
+	text-decoration: none;
+	color: #b1b1b1;
+	font-size: 14px;
+}
